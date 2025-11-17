@@ -9,19 +9,88 @@
   </head>
   <body>
     <header>
-      <h1>Product Pick</h1>
+      <h1>T-shirt selection</h1>
     </header>
     <main>
-      <form>
-        <!-- write your html here-->
-        <!-- 
-          try writing out the requirements first as comments
-        this will also help you fill in your PR message later-->
+    <form method="Post">
+      <fieldset>
+        <legend>Personal Information</legend>
+      <label for="name">Full Name</label><br>
+      
+      <input
+        id="name"
+        name="name"
+        type="text"
+        required
+        maxlength="50"
+        minlength="2"
+        pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü' \-]{2,50}$"
+        title="Type your real name (2–50 caracteres). Solo letras, espacios, guiones y apóstrofes.">
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Email address</legend>
+      <label for="email">Email:</label><br>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        placeholder="username@example.com"
+        maxlength="100"
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        title="Type a valid email address.">
+      </fieldset>
+      <br>
+
+      <fieldset>
+        <legend>Product Selection</legend>
+        <div role="radiogroup" aria-labelledby="color-label">
+          <div id="color-label"><strong>Choose a color (Mandatory):</strong></div><br>
+
+          <input type="radio" id="red" name="color" value="Red" required>
+          <label for="red">Red</label><br><br>
+
+
+          <input type="radio" id="blue" name="color" value="Blue">  
+          <label for="blue">Blue</label><br><br>
+
+
+          <input type="radio" id="green" name="color" value="Green">
+          <label for="green">Green</label><br><br>
+
+
+          <div role="note">We only have these 3 color options. </div>
+        
+        </div>
+      </fieldset>
+      <br>
+
+      <fieldset>
+        <legend>Size</legend>
+        <label for="size">Select a size (Mandatory):</label><br><br>
+
+        <select id="size" name="size" required aria-describedby="Size-Desc">
+          <option value="" disabled selected>Select your option</option>
+          <option value="XS">Extra Small</option>
+          <option value="S">Small</option>
+          <option value="M">Medium</option>
+          <option value="L">Large</option>
+          <option value="XL">Extra Large</option>
+          <option value="XXL">Extra Extra Large</option>
+        </select><br><br>
+        <div id="Size-Desc">Choose from XS to XXL sizes.</div>
+      </fieldset>
+
+      <br>
+      <p><strong>Reminder</strong>All fields above are required.</p>
+
+      <button type="submit" formaction="results.html" formmethod="get">Submit</button>
       </form>
     </main>
     <footer>
       <!-- change to your name-->
-      <h2>By HOMEWORK SOLUTION</h2>
+      <h2>By LAURA BEJARANO</h2>
     </footer>
   </body>
 </html>
